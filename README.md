@@ -1,8 +1,9 @@
 
-# 🌐 Out in the Open: Identifying Internet-Facing Devices
+# 🕵️‍♂️ External Recon: Hunting Internet-Facing Infrastructure
+
+![image](https://github.com/user-attachments/assets/6f7aadc8-e2f5-4925-a836-eaac22423527)
 
 
-![image](https://github.com/user-attachments/assets/3e3a3710-3403-46f1-bf51-d53e2504d90e)
 
 ## 📌 Introduction
 
