@@ -8,8 +8,6 @@ This guide details how I detected, investigated, and responded to a brute-force 
 
 ## 📋 Prerequisites  
 
-Ensure you have the following before proceeding:
-
 ✅ Microsoft Defender for Endpoint (MDE) onboarded  
 ✅ Access to Microsoft 365 Defender Advanced Hunting  
 ✅ Access to logs: `DeviceInfo` and `DeviceLogonEvents`  
@@ -58,8 +56,11 @@ DeviceInfo
 | where IsInternetFacing == 1
 | order by Timestamp desc
 ```
+![image](https://github.com/user-attachments/assets/b3c24e53-17c3-418d-9d78-2dced2eb7d0d)
 
-📆 **Last Detected Exposure:** `April 14, 2025 – 8:34:46 PM`  
+
+
+📆 **Last Detected Exposure:** `April 17, 2025 – 8:34:46 PM`  
 
 ---
 
@@ -84,16 +85,25 @@ DeviceLogonEvents
 | summarize Attempts = count() by ActionType, RemoteIP, DeviceName
 | order by Attempts
 ```
+![image](https://github.com/user-attachments/assets/97895a2e-262b-40d3-b198-e7430e2720df)
 
 💥 Several unauthorized attempts detected targeting `user: yusuf`.
 
-📉 We also saw **13 failed login attempts** using **unknown usernames**, strongly suggesting brute-force activity.
+
+
+📉 I also saw **13 failed login attempts** using **unknown usernames**, strongly suggesting brute-force activity.
+![image](https://github.com/user-attachments/assets/685e7b89-6c23-42e3-9196-4fccb9f20718)
+
+
+
+
 
 ---
 
+
 ## ✅ 4️⃣ Verifying Successful Logins  
 
-We checked whether any of the attacks led to successful access.
+I checked whether any of the attacks led to successful access.
 
 **Suspicious IP List:**
 ```kql
@@ -111,12 +121,17 @@ DeviceLogonEvents
 ```
 
 🔓 **20 successful logins** from external or suspicious IPs using `user: yusuf`.
+![image](https://github.com/user-attachments/assets/3fd11be5-a506-47d7-a10b-d4bb0a1054ac)
+---
+I reviewed all login attempts and analyzed the suspicious locations based on the associated IP addresses.
+![image](https://github.com/user-attachments/assets/e820c1f9-404d-44cc-b51f-5c64195d5550)
+
 
 ---
 
 ## 🕵️ 5️⃣ MITRE ATT&CK Mapping  
 
-We mapped our findings to the MITRE ATT&CK framework for standardized threat understanding.
+I mapped our findings to the MITRE ATT&CK framework for standardized threat understanding.
 
 ### 🎯 TTPs Identified:
 | Tactic               | Technique | ID       | Evidence |
