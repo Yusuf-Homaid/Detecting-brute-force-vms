@@ -1,3 +1,9 @@
+
+# 🌐 Out in the Open: Identifying Internet-Facing Devices
+
+
+![image](https://github.com/user-attachments/assets/3e3a3710-3403-46f1-bf51-d53e2504d90e)
+
 ## 📌 Introduction
 
 During routine maintenance, as a security analyst was tasked with identifying any **Virtual Machines (VMs)** in the shared services cluster (DNS, DHCP, Domain Services, etc.) that were mistakenly exposed to the public internet. These machines are critical infrastructure, and their exposure poses serious risks including brute force attacks.  
