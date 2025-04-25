@@ -71,11 +71,10 @@ DeviceInfo
 
 ---
 
-## 🧠 2️⃣ Forming the Hypothesis  
+## 🧠 2️⃣ Scenario Overview  
 
-Based on known weaknesses (e.g., lack of account lockout on legacy systems), we hypothesized:  
-**“Devices exposed to the internet may have been brute-force accessed due to excessive failed login attempts without triggering security mechanisms.”**
-
+Based on known weaknesses (e.g., lack of account lockout on legacy systems), it was observed in a real-world environment that:  
+**“Devices exposed to the internet were subjected to brute-force attacks due to excessive failed login attempts without triggering security mechanisms.”**
 ---
 
 ## 📈 3️⃣ Detecting Brute Force Attempts  
